@@ -20,9 +20,18 @@ const students = [
     name: 'Luna Lovegood',
     house: 'Ravenclaw',
   },
+  { id: 5,
+    name: 'Bellatrix Lestrange',
+    house: 'Expelled'
+  }
 ];
 
-
+// const expelled = [
+//   {
+//     id: 1,
+//     name: 'Bellatrix Lestrange'
+//   }
+// ];
 
 //declare render to dom function
 const renderToDom = (divId, htmlToRender) => {
@@ -34,17 +43,31 @@ const renderToDom = (divId, htmlToRender) => {
 const cardsOnDom = (array) => {
   let domString = "";
   for (const student of array){
-    domString += `<div class="card" style="width: 18rem;">
+    domString += `<div id="card" class=${student.house} style="width: 20rem;">
     <class="card-img-top" alt=${student.name}> 
     <div class="card-body">
       <h5 class="card-title">${student.name}</h5>
       <p>House: ${student.house}</p>
-      <button class="btn btn-danger" id="delete--${student.id}">Delete</button>
+      <button class="btn btn-danger" id="delete--${student.id}">Expel</button>
     </div>
   </div>`;
   }
   renderToDom('#app', domString);
 }
+
+// scrapped function that displays expelled students on webpage
+// const expelledOnDom = (array) => {
+//   let domString = "";
+//   for (student of array){
+//     domString += `<div id="card" style="width: 20rem;">
+//     <div class="card-body">
+//       <h5 class="card-title">${student.name}</h5>
+//       <p class="card-text">has been Expelled O_O</p>
+//     </div>
+//   </div>`;
+//   }
+//   renderToDom('#expelledStudents', domString);
+// }
 
 //filter by house
 const filter = (array, sortString) => {
@@ -84,19 +107,25 @@ form.addEventListener('submit', createStudent)
 
 
 //prep buttons for event listeners
-const openForm = document.querySelector('#goButton')
+const expelBtn = document.getElementById("delete--${student.id}")
+const openModalBtn = document.getElementById("open-modal");
+const closeModalBtn = document.getElementById("close-modal");
+const modal = document.getElementById("modal");
 const showAllBtn = document.querySelector('#showAll')
 const showGryffindorBtn = document.querySelector('#Gryffindor');
 const showSlytherinBtn = document.querySelector('#Slytherin');
 const showHufflepuffBtn = document.querySelector('#Hufflepuff');
 const showRavenclawBtn = document.querySelector('#Ravenclaw');
 
-//open name submit form when go button is clicked ****************
-openForm.addEventListener('click', () => {
-  //needs to open a Modal with the submission form
+//modal button event listeners. 
 
+openModalBtn.onclick = function() {
+  modal.style.display = "block";
+}
 
-})
+closeModalBtn.onclick = function() {
+  modal.style.display = "none";
+}
 
 //filter button event listeners
 showAllBtn.addEventListener('click', () => {
@@ -124,6 +153,7 @@ showRavenclawBtn.addEventListener('click', () => {
 })
 
 const app = document.querySelector('#app');
+// const expelledStudents = document.querySelector('#expelledStudents')
 
 
 //Delete button functionality
@@ -133,11 +163,14 @@ app.addEventListener('click', (e) =>{
     const [, id] = e.target.id.split('--')
 
     const index = students.findIndex(e => e.id === Number(id));
-
-    students.splice(index, 1);
+    //Removes selected card from dom
+    // students.splice(index, 1);
+    students[index].house = "Expelled"
 
     cardsOnDom(students);
   }
 })
+
 //calls function that displays student cards on webpage
 cardsOnDom(students);
+// cardsOnDom(expelled);
