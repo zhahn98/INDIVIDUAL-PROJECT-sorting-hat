@@ -1,6 +1,8 @@
 body{
-  background-color: rgb(161, 201, 202);
+  background-image: url("images/HPBG.png");
   font-family: patatino, serif;
+  margin-top: 30px;
+  justify-content: center;
 }
 
 #app {
@@ -21,7 +23,7 @@ form {
 
 .btn-header {
   text-align: center;
-
+  color:azure
 }
 
 .form-header {
@@ -57,4 +59,135 @@ border-radius: 12px;
   background-color: rgb(51, 51, 143);
   color:aliceblue;
   border-radius: 12px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 80%;
+  overflow: auto;
+}
+
+.modal-content{
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+#close-modal {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#close-modal:hover,
+#close-modal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modal-btn{
+ 
+ font-size: 30px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+#open-modal{
+  border-radius: 3px;
+  border-color: darkblue;
+  border-radius: 12px;
+}
+
+.card {
+  background-color:blanchedalmond;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 30px;
+}
+
+.Gryffindor {
+  background-color:rgb(163, 78, 78);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-radius: 12px;
+  outline-style: groove;
+  outline-color: white;
+}
+
+.Slytherin {
+  background-color: rgb(108, 189, 108);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-radius: 12px;
+  outline-style: groove;
+  outline-color: white;
+}
+
+.Hufflepuff {
+  background-color: rgb(207, 207, 98);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-radius: 12px;
+  outline-style: groove;
+  outline-color: white;
+}
+
+.Ravenclaw {
+  background-color: rgb(80, 80, 201);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-radius: 12px;
+  outline-style: groove;
+  outline-color: white;
+}
+
+.Expelled {
+  background-color: rgb(31, 39, 31);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-radius: 12px;
+  outline-style: groove;
+  outline-color: white;
+  color:aliceblue
+}
+.modal-content {
+  background-image: url("images/starsBG.png");
+  color:rgb(234, 243, 105);
+  text-shadow: 4px 4px 4px black;
 }

@@ -9,30 +9,26 @@
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
+  <div id="modal-btn"><button id="open-modal">Create Student</button></div>
   <form>
 
-    <div class="card">
-      <div class="card-header">
-        Greetings, young wizard!
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">I am the Sorting Hat!</h5>
-        <p class="card-text">With the power of magic, I will determine your Hogwarts House!</p>
-        <a href="#" id ="goButton" class="btn btn-primary">Go!</a>
-      </div>
-    </div>
-
-
-    <h2 class="form-header">Enter New Student Name</h2>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span id="close-modal">&times;</span>
+        <p>
+          <h2 class="form-header">Hello! I am the Sorting Hat. With the power of magic, I will assign a house to any new student!</h2>
+          <br>
     <div class ="form">
       <label for="student-name">Student Name:</label>
-      <input type="text" class="form" id="name" placeholder="">
+      <input required type="text" class="form" id="name" placeholder="">
       <button type="submit" class="submitBut">Sort!</button>
     </div>
-
-    
+        </p>
+      </div>
+    </div>
   </form>
-  <h2 class="btn-header">Filter Students</h2>
+
+  <h2 class="btn-header">Filter Students:</h2><br>
   <div class ="house-btns">
     <button id="showAll">All Students</button>
     <button id="Gryffindor">Gryffindor</button>
